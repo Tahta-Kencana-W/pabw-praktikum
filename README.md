@@ -14,3 +14,6 @@ Topik halaman saya: koleksi buku di rak saya.
 - Kolom tabel: Nama Latihan, Beban (kg), Repetisi, Tanggal
 - Kolom form: 1. Nama Gerakan/Latihan 2. Berat Beban (kg) 3. Jumlah Repetisi 4. Seminggu dilatih berapa kali
 - Gambar: fotocoba-1.webp
+
+catatan AI
+banyak pak
