@@ -16,4 +16,4 @@ Topik halaman saya: koleksi buku di rak saya.
 - Gambar: fotocoba-1.webp
 
 catatan AI
-banyak pak
+- banyak pak
