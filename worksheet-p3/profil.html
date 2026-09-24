@@ -67,5 +67,37 @@
   <figcaption>kesehatan adalah investasi</figcaption>
 </figure>
 
+<figure>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwf631AcGNBB00WeM3a39qYaCyFwbeF5GuSAi4k6uCWjFL0iAzcPO5MOVxuERpaoNw17cReaa71EDgLbl0hga4O1imdY_-nk0RCqUTTEEaFg&s=10"
+       width="640" height="360" loading="lazy">
+</figure>
+
+<section id="bagian-2">
+  <h2>Catat Latihan Baru</h2>
+
+  <form action="/simpan" method="post">
+    <p>
+      <label for="nama-gerakan">Nama Gerakan/Latihan:</label>
+      <input type="text" id="nama-gerakan" name="nama_gerakan" placeholder="Contoh: Bench Press" required>
+    </p>
+
+    <p>
+      <label for="berat-beban">Berat Beban (kg):</label>
+      <input type="number" id="berat-beban" name="berat_beban" min="1" step="0.5" placeholder="Contoh: 60" required>
+    </p>
+
+    <p>
+      <label for="jumlah-repetisi">Jumlah Repetisi:</label>
+      <input type="number" id="jumlah-repetisi" name="jumlah_repetisi" min="1" placeholder="Contoh: 8" required>
+    </p>
+
+    <p>
+      <label for="frekuensi-mingguan">Seminggu dilatih berapa kali:</label>
+      <input type="number" id="frekuensi-mingguan" name="frekuensi_mingguan" min="1" max="7" placeholder="Contoh: 2" required>
+    </p>
+
+    <button type="submit">Simpan Catatan</button>
+  </form>
+</section>
 
 
