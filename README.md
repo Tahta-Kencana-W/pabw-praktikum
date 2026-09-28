@@ -7,6 +7,7 @@
 ### Token yang saya tetapkan
  
 | Token | Nilai | Untuk apa |
+
 | --color-bg | #0B0F12 | latar halaman |
 
 | --color-fg | #F1F5F9 | warna teks utama |
