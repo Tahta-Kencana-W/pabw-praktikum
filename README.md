@@ -31,3 +31,15 @@ Kriteria selesai saya: mengubah --color-primary di satu baris
 harus mengubah warna tombol, tautan, judul, dan garis fokus.
 
 Pengungkapan AI
+
+Dalam pengerjaan tugas ini, saya banyak mengandalkan bantuan AI (Gemini) untuk menghasilkan kode, mengatasi error, dan mengisi lembar kerja praktikum:
+
+HTML (profil.html & informasi.html):
+Kerangka dasar HTML, struktur tabel pencatatan beban, form input, perapian semantik, serta seluruh teks konten informasi (panduan suplemen dan 4 mitos gym) dibuat/dituliskan langsung oleh AI berdasarkan permintaan saya. Peran saya adalah mengarahkan topik (gym/latihan beban).
+
+CSS & Design Tokens (tokens.css, tema.css, base.css, layout.css, komponen.css):
+Penentuan kode hex palet warna neon/dark gym (#CCFF00, #0B0F12, dll.), susunan nilai token spasi/font, pemisahan CSS ke lima berkas, hingga styling tata letak dan tombol sebagian besar di-generate oleh AI.
+Logika pengalih tema tanpa JavaScript memakai :root:has(#tema:checked) dan @media (prefers-color-scheme: dark) diberikan solusinya oleh AI sesuai instruksi modul.
+
+JavaScript DOM:
+Fungsi penambahan baris data baru ke tabel saat form disubmit (addEventListener dan manipulasi elemen tabel) sepenuhnya ditulis oleh AI.
