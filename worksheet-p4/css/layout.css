@@ -4,7 +4,6 @@ header {
   margin-bottom: var(--space-6);
 }
 
-/* Navigasi horizontal (menghilangkan bullet list di gambar) */
 nav ul {
   display: flex;
   gap: var(--space-4);

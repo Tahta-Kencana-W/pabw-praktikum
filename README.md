@@ -2,7 +2,7 @@
  
 - Berkas gaya yang akan dibuat: tokens.css, base.css,
   layout.css, komponen.css, tema.css
-- Warna utama: #1D3A8C (biru), dipilih karena ...
+- Warna utama: #CCFF00 (Neon Lime), dipilih karena memberikan kesan energik
  
 ### Token yang saya tetapkan
  
@@ -29,3 +29,5 @@
 
 Kriteria selesai saya: mengubah --color-primary di satu baris
 harus mengubah warna tombol, tautan, judul, dan garis fokus.
+
+Pengungkapan AI
