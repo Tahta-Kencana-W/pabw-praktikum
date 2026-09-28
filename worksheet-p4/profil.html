@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Strg</title>
+</head>
+
+<body>
+  <header>
+    <h1>Progres Strength</h1>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#bagian-1">Riwayat</a></li>
+        <li><a href="#bagian-2">Buat Catatan</a></li>
+        <li><a href="#informasi">Informasi</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Seksi Riwayat Angkat Beban -->
+    <section id="bagian-1">
+      <h2>Riwayat Angkat Beban</h2>
+      <table>
+        <caption>Riwayat Latihan Angkat Beban</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nama Latihan</th>
+            <th scope="col">Beban (kg)</th>
+            <th scope="col">Repetisi</th>
+            <th scope="col">Frekuensi (x/minggu)</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-riwayat-body">
+          <tr>
+            <th scope="row">Bench Press</th>
+            <td>60</td>
+            <td>8</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">Squat</th>
+            <td>80</td>
+            <td>6</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">Deadlift</th>
+            <td>100</td>
+            <td>5</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Seksi Catatan / Form Latihan Baru -->
+    <section id="bagian-2">
+      <h2>Catat Latihan Baru</h2>
+      <form id="form-latihan">
+        <p>
+          <label for="nama-gerakan">Nama Gerakan/Latihan:</label>
+          <input type="text" id="nama-gerakan" name="nama_gerakan" placeholder="Contoh: Bench Press" required>
+        </p>
+
+        <p>
+          <label for="berat-beban">Berat Beban (kg):</label>
+          <input type="number" id="berat-beban" name="berat_beban" min="1" step="0.5" placeholder="Contoh: 60" required>
+        </p>
+
+        <p>
+          <label for="jumlah-repetisi">Jumlah Repetisi:</label>
+          <input type="number" id="jumlah-repetisi" name="jumlah_repetisi" min="1" placeholder="Contoh: 8" required>
+        </p>
+
+        <p>
+          <label for="frekuensi-mingguan">Seminggu dilatih berapa kali:</label>
+          <input type="number" id="frekuensi-mingguan" name="frekuensi_mingguan" min="1" max="7" placeholder="Contoh: 2" required>
+        </p>
+
+        <button type="submit">Simpan Catatan</button>
+      </form>
+    </section>
+
+    <!-- Seksi Informasi: Suplemen & Mitos Gym -->
+    <section id="informasi">
+      <h2>Informasi Gym & Nutrisi</h2>
+      
+      <figure>
+        <img src="fotocoba-1.webp"
+             alt="Arnold Schwarzenegger flexing bicep pose"
+             width="400" height="400" loading="lazy">
+        <figcaption>Kesehatan adalah investasi jangka panjang</figcaption>
+      </figure>
+
+      <article>
+        <h3>Panduan Dasar Suplemen Gym</h3>
+        <ul>
+          <li><strong>Creatine Monohydrate:</strong> Meningkatkan cadangan tenaga otot, ledakan kekuatan, dan hidrasi sel.</li>
+          <li><strong>Whey Protein:</strong> Sumber protein cepat serap untuk memenuhi target harian dan memulihkan otot.</li>
+          <li><strong>Pre-Workout:</strong> Menambah fokus dan energi instan sebelum mulai mengangkat beban.</li>
+          <li><strong>Minyak Ikan (Omega-3):</strong> Membantu meredakan nyeri persendian dan mempercepat pemulihan tubuh.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Mitos Gym yang Paling Sering Bikin Bingung</h3>
+        <dl>
+          <dt><strong>1. "Makin banyak keringat = makin banyak lemak terbakar"</strong></dt>
+          <dd><strong>Fakta:</strong> Keringat cuma cara tubuh menurunkan suhu panas, yang keluar adalah air, bukan lemak.</dd>
+          <br>
+          <dt><strong>2. "Kalau badan tidak pegal (DOMS), latihannya sia-sia"</strong></dt>
+          <dd><strong>Fakta:</strong> Pegal bukan tanda otot tumbuh. Tolok ukur latihan berhasil adalah beban atau repetisi bertambah seiring waktu.</dd>
+          <br>
+          <dt><strong>3. "Angkat beban bikin wanita berotot kekar"</strong></dt>
+          <dd><strong>Fakta:</strong> Hormon testosteron wanita sangat sedikit, angkat beban justru mengencangkan tubuh (*toning*), bukan membuat badan jadi raksasa.</dd>
+          <br>
+          <dt><strong>4. "Makan malam bikin langsung jadi lemak"</strong></dt>
+          <dd><strong>Fakta:</strong> Tubuh tidak punya jam otomatis penimbun lemak. Yang bikin gemuk adalah total kalori harian yang berlebih, bukan jam makannya.</dd>
+        </dl>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tahta Kencana Wijaya • 25523121 • 2026</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('form-latihan');
+    const tableBody = document.getElementById('tabel-riwayat-body');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById('nama-gerakan').value;
+      const beban = document.getElementById('berat-beban').value;
+      const repetisi = document.getElementById('jumlah-repetisi').value;
+      const frekuensi = document.getElementById('frekuensi-mingguan').value;
+
+      const barisBaru = document.createElement('tr');
+      barisBaru.innerHTML = `
+        <th scope="row">${nama}</th>
+        <td>${beban}</td>
+        <td>${repetisi}</td>
+        <td>${frekuensi}</td>
+      `;
+
+      tableBody.appendChild(barisBaru);
+      form.reset();
+    });
+  </script>
+</body>
+</html>
