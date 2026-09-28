@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progress Strg</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/tema.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/komponen.css">
 </head>
 
 <body>
@@ -140,12 +145,23 @@
       const frekuensi = document.getElementById('frekuensi-mingguan').value;
 
       const barisBaru = document.createElement('tr');
-      barisBaru.innerHTML = `
-        <th scope="row">${nama}</th>
-        <td>${beban}</td>
-        <td>${repetisi}</td>
-        <td>${frekuensi}</td>
-      `;
+      barisBaru.classList.add('catatan-baru');
+
+      const namaCell = document.createElement('th');
+      namaCell.scope = 'row';
+      namaCell.append(document.createTextNode(nama));
+
+      const labelCatatan = document.createElement('span');
+      labelCatatan.className = 'label-catatan-baru';
+      labelCatatan.textContent = 'Catatan baru';
+      namaCell.append(labelCatatan);
+      barisBaru.append(namaCell);
+
+      [beban, repetisi, frekuensi].forEach(function(nilai) {
+        const cell = document.createElement('td');
+        cell.textContent = nilai;
+        barisBaru.append(cell);
+      });
 
       tableBody.appendChild(barisBaru);
       form.reset();

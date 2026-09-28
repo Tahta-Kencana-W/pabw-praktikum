@@ -1,0 +1,43 @@
+header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+/* Navigasi horizontal (menghilangkan bullet list di gambar) */
+nav ul {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;
+  margin-top: var(--space-2);
+}
+
+nav a {
+  font-weight: 600;
+  padding: var(--space-1) var(--space-2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-1);
+}
+
+footer {
+  text-align: center;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  color: #94A3B8;
+  font-size: var(--text-sm);
+}
