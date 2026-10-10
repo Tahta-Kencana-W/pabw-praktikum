@@ -5,6 +5,11 @@ const profil = {
   jumlahProyek: 3,
 };
 
-const kalimat = `Nama saya ${profil.nama}, ${profil.peran}. Saya memiliki ${profil.keahlian.length} keahlian utama dan telah menyelesaikan ${profil.jumlahProyek} proyek.`;
+function buatPerkenalan({ nama, peran }) {
+  return `${nama} — ${peran}`;
+}
 
-console.log(kalimat);
+const formatKeahlian = (daftar) => daftar.join(" · ");
+
+console.log(buatPerkenalan(profil));
+console.log(formatKeahlian(profil.keahlian));
