@@ -1,3 +1,17 @@
+## Pertemuan 8 — JavaScirpt
+
+## Deklarasi Penggunaan AI
+
+Dalam pengerjaan tugas Pertemuan 8 (JavaScript Modern ES6+), saya memanfaatkan AI sebagai asisten belajar dan pendamping koding dengan rincian bantuan sebagai berikut:
+
+ -Konsep & Sintaks : Memberikan penjelasan dan contoh penerapan fitur JavaScript modern seperti Object Destructuring, Arrow Functions, Template Literals, dan Spread Operator (...).
+ -Pemrosesan Data Array: Membantu memahami cara kerja serta penulisan *array methods* (map, filter, find, dan sort) tanpa merusak data asli (immutability).
+ -Penanganan Galat (Debugging):Membantu mendeteksi dan menyelesaikan pesan galat (error) pada terminal dan browser console, seperti kendala port server Python, masalah *pathing* URL 404, dan null selector pada DOM.
+ -Struktur Data & Fungsi Murni: Memberikan panduan dalam menyusun struktur array of objects yang rapi serta pembuatan fungsi murni (pure functions) yang memanfaatkan nilai balikan (return).
+ -Server Lokal & Workflow: Menjelaskan alur pembukaan proyek menggunakan server lokal Python (http.server) agar fitur modul JavaScript dapat berjalan dengan aman di browser.
+ -Refleksi & Dokumentasi: Memberikan referensi penulisan untuk tabel catatan galat (E.5), refleksi jawaban modul, dan tabel penilaian diri
+
+
 ## Pertemuan 4 — Design token halaman profil
  
 - Berkas gaya yang akan dibuat: tokens.css, base.css,
