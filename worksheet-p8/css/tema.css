@@ -1,0 +1,6 @@
+/* tema.css */
+body[data-theme="dark"] {
+  --color-bg: #0B0F12;
+  --color-surface: #182026;
+  --color-fg: #F1F5F9;
+}
