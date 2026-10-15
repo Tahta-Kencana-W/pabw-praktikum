@@ -4,12 +4,11 @@ const profil = {
   keahlian: ["HTML", "CSS", "JavaScript"],
 };
 
-const daftarProyek = [
+export const daftarProyek = [
   { judul: "Halaman Profil", tahun: 2026, selesai: true },
   { judul: "Katalog Produk", tahun: 2026, selesai: false },
   { judul: "Aplikasi Antrean Parkir", tahun: 2026, selesai: true },
 ];
-
 
 console.table(profil.keahlian);
 console.table(daftarProyek);
