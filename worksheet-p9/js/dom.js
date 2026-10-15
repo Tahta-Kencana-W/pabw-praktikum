@@ -1,34 +1,93 @@
-const projectList = document.querySelector("#project-list");
-const filterButtons = document.querySelector("#filter-buttons");
-const emptyMessage = document.querySelector("#empty-message");
-const formLatihan = document.querySelector("#form-latihan");
-
-console.log("Project List:", projectList);
-console.log("Filter Buttons:", filterButtons);
-console.log("Empty Message:", emptyMessage);
-console.log("Form Latihan:", formLatihan);
-
 import { daftarProyek } from "./app.js";
 
 const container = document.querySelector("#list");
+const filterRow = document.querySelector("#filter");
+const emptyMessage = document.querySelector("#empty-message");
 
 function buildCard(project) {
   const li = document.createElement("li");
   li.className = "card";
-  li.textContent = project.judul;
+
+  const title = document.createElement("h3");
+  title.textContent = project.judul;
+
+  const details = document.createElement("p");
+  details.textContent = `Tahun: ${project.tahun} • ${project.selesai ? "Selesai" : "Belum selesai"}`;
+
+  const category = document.createElement("span");
+  category.className = "project-category";
+  category.textContent = project.kategori;
+
+  li.append(title, details, category);
   return li;
 }
 
-function renderProjects(projects) {
+function render(projects) {
   container.textContent = "";
 
   const fragment = document.createDocumentFragment();
-
   projects.forEach((project) => {
     fragment.append(buildCard(project));
   });
-
   container.append(fragment);
+
+  emptyMessage.hidden = projects.length > 0;
 }
 
-renderProjects(daftarProyek);
+function markActiveButton(activeButton) {
+  filterRow.querySelectorAll("button").forEach((button) => {
+    button.classList.toggle("active", button === activeButton);
+  });
+}
+
+filterRow.addEventListener("click", (event) => {
+  const button = event.target.closest("button");
+  if (!button || !filterRow.contains(button)) return;
+
+  const category = button.dataset.category;
+  const selected = daftarProyek.filter(
+    (project) => category === "all" || project.kategori === category
+  );
+
+  markActiveButton(button);
+  render(selected);
+});
+
+render(daftarProyek);
+const allButton = filterRow.querySelector('[data-category="all"]');
+if (allButton) markActiveButton(allButton);
+
+const formLatihan = document.querySelector("#form-latihan");
+const tableBody = document.querySelector("#tabel-riwayat-body");
+
+if (formLatihan && tableBody) {
+  formLatihan.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nama = document.querySelector("#nama-gerakan").value.trim();
+    const beban = document.querySelector("#berat-beban").value;
+    const repetisi = document.querySelector("#jumlah-repetisi").value;
+    const frekuensi = document.querySelector("#frekuensi-mingguan").value;
+
+    if (!nama || !beban || !repetisi || !frekuensi) return;
+
+    const row = document.createElement("tr");
+    row.className = "catatan-baru";
+
+    const nameCell = document.createElement("th");
+    nameCell.scope = "row";
+    nameCell.textContent = nama;
+
+    const values = [beban, repetisi, frekuensi];
+    row.append(nameCell);
+
+    values.forEach((value) => {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.append(cell);
+    });
+
+    tableBody.append(row);
+    formLatihan.reset();
+  });
+}

@@ -5,9 +5,24 @@ const profil = {
 };
 
 export const daftarProyek = [
-  { judul: "Halaman Profil", tahun: 2026, selesai: true },
-  { judul: "Katalog Produk", tahun: 2026, selesai: false },
-  { judul: "Aplikasi Antrean Parkir", tahun: 2026, selesai: true },
+  {
+    judul: "Halaman Profil",
+    tahun: 2026,
+    selesai: true,
+    kategori: "web"
+  },
+  {
+    judul: "Katalog Produk",
+    tahun: 2026,
+    selesai: false,
+    kategori: "web"
+  },
+  {
+    judul: "Aplikasi Antrean Parkir",
+    tahun: 2026,
+    selesai: true,
+    kategori: "aplikasi"
+  }
 ];
 
 console.table(profil.keahlian);
@@ -25,3 +40,5 @@ console.log("Daftar Judul Proyek:", daftarJudul);
 const salinanTerurut = [...daftarProyek].sort((a, b) => a.tahun - b.tahun);
 console.log("Hasil Sort (Salinan):", salinanTerurut);
 console.log("Data Asli Setelah Sort:", daftarProyek);
+
+
