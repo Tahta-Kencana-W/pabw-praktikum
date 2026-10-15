@@ -1,5 +1,6 @@
 import { daftarProyek } from "./app.js";
 
+
 const container = document.querySelector("#list");
 const filterRow = document.querySelector("#filter");
 const emptyMessage = document.querySelector("#empty-message");
@@ -25,13 +26,18 @@ function buildCard(project) {
 function render(projects) {
   container.textContent = "";
 
+  if (projects.length === 0) {
+    emptyMessage.hidden = false;
+    return; 
+  }
+  
+  emptyMessage.hidden = true;
+
   const fragment = document.createDocumentFragment();
   projects.forEach((project) => {
     fragment.append(buildCard(project));
   });
   container.append(fragment);
-
-  emptyMessage.hidden = projects.length > 0;
 }
 
 function markActiveButton(activeButton) {
@@ -57,19 +63,49 @@ render(daftarProyek);
 const allButton = filterRow.querySelector('[data-category="all"]');
 if (allButton) markActiveButton(allButton);
 
+
+
 const formLatihan = document.querySelector("#form-latihan");
 const tableBody = document.querySelector("#tabel-riwayat-body");
 
 if (formLatihan && tableBody) {
+  const inputs = formLatihan.querySelectorAll("input");
+  const submitBtn = formLatihan.querySelector('button[type="submit"]');
+  
+  function validateForm() {
+    let isValid = true;
+
+    inputs.forEach(input => {
+      const value = input.value.trim();
+      
+      if (value === "") {
+        isValid = false;
+        input.setAttribute("aria-invalid", "true"); 
+      } else {
+        input.removeAttribute("aria-invalid");
+      }
+    });
+
+    submitBtn.disabled = !isValid; 
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", validateForm);
+  });
+
   formLatihan.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const nama = document.querySelector("#nama-gerakan").value.trim();
+    const inputNama = document.querySelector("#nama-gerakan");
+    const nama = inputNama.value.trim();
     const beban = document.querySelector("#berat-beban").value;
     const repetisi = document.querySelector("#jumlah-repetisi").value;
     const frekuensi = document.querySelector("#frekuensi-mingguan").value;
 
-    if (!nama || !beban || !repetisi || !frekuensi) return;
+    if (!nama || !beban || !repetisi || !frekuensi) {
+      inputNama.focus(); 
+      return;
+    }
 
     const row = document.createElement("tr");
     row.className = "catatan-baru";
@@ -88,6 +124,9 @@ if (formLatihan && tableBody) {
     });
 
     tableBody.append(row);
+    
     formLatihan.reset();
+    
+    validateForm(); 
   });
 }
