@@ -1,6 +1,7 @@
 import { daftarProyek } from "./app.js";
 
 
+
 const container = document.querySelector("#list");
 const filterRow = document.querySelector("#filter");
 const emptyMessage = document.querySelector("#empty-message");
@@ -20,22 +21,23 @@ function buildCard(project) {
   category.textContent = project.kategori;
 
   li.append(title, details, category);
-  return li;
+  return li; 
 }
 
 function render(projects) {
   container.textContent = "";
 
+  // D.1: Check the empty state
   if (projects.length === 0) {
     emptyMessage.hidden = false;
-    return; 
+    return;
   }
   
   emptyMessage.hidden = true;
 
   const fragment = document.createDocumentFragment();
   projects.forEach((project) => {
-    fragment.append(buildCard(project));
+    fragment.append(buildCard(project)); 
   });
   container.append(fragment);
 }
@@ -124,7 +126,6 @@ if (formLatihan && tableBody) {
     });
 
     tableBody.append(row);
-    
     formLatihan.reset();
     
     validateForm(); 
