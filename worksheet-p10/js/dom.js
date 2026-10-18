@@ -175,3 +175,32 @@ formNegara.addEventListener("submit", async (event) => {
       : "Gagal mencari negara karena terjadi kesalahan yang tidak diketahui.";
   }
 });
+
+formNegara.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const nama = inputNegara.value.trim();
+  
+  if (!nama) return;
+
+  pesanNegara.textContent = "Mencari..."; 
+  daftarNegaraElement.textContent = ""; 
+
+  try {
+    const hasil = await cariNegara(nama);
+    
+    if (hasil.length === 0) {
+      pesanNegara.textContent = "Negara tidak ditemukan."; 
+      return;
+    }
+
+    pesanNegara.textContent = ""; 
+    
+    hasil.forEach((negara) => {
+      const kartu = buatKartuNegara(negara);
+      daftarNegaraElement.appendChild(kartu);
+    });
+    
+  } catch (error) {
+    pesanNegara.textContent = `Gagal mencari negara. ${error.message}`; 
+  }
+});
