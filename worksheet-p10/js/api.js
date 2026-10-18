@@ -150,3 +150,27 @@ export async function cariNegara(nama) {
     }
   }));
 }
+
+async function tesDataMap() {
+  try {
+    const response = await fetch("https://countriesnow.space/api/v0.1/countries/info?returns=capital,flag");
+    
+    const data = await response.json();
+
+    console.log("1. Object (data.data[0]):", data.data[0]); 
+
+    console.log("2. Array (Mencetak 3 negara pertama):");
+    data.data.slice(0, 3).forEach((item) => {
+      console.log(` - ${item.name} (Ibu kota: ${item.capital})`);
+    });
+
+    console.log("3. Text (data.msg):", data.msg); 
+
+    console.log("4. Boolean (data.error):", data.error); 
+
+  } catch (error) {
+    console.error("Gagal mengambil data:", error);
+  }
+}
+
+tesDataMap();
