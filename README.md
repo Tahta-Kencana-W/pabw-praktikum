@@ -1,3 +1,19 @@
+## Pertemuan 10 — JS Async and JSON
+
+Fetch API & Async/Await : Memberikan penjelasan dan contoh penulisan fungsi async/await untuk mengonsumsi data dari REST API (countriesnow.space), pemrosesan data bertingkat, serta pembacaan respons JSON secara aman.
+
+Struktur Modul & Pemisahan Layer : Membantu merancang arsitektur modul ES6 (api.js dan dom.js) agar sesuai dengan aturan pemisahan tanggung jawab (layer boundary).
+
+Pembuatan Kode & Manipulasi DOM : Memberikan panduan dalam membuat fungsi buatKartuNegara() menggunakan document.createElement() dan textContent secara aman tanpa innerHTML.
+
+Penanganan Galat (Error Handling) : Menyusun penanganan galat yang tangguh menggunakan blok try...catch, pengecekan if (!response.ok) sebelum .json(), serta penanganan kondisi jaringan terputus (offline).
+
+Empat Status Antarmuka (4 Interface States) : Membantu merancang alur logika event handler pada form pencarian untuk mengelola 4 status tampilan UI (Loading, Success, Failure, dan Empty).
+
+Debugging & Git Workflow : Membantu mendeteksi dan mengeliminasi pesan galat pada browser console (seperti SyntaxError: Identifier has already been declared) serta menyelesaikan kendala Git (non-fast-forward, pembatalan rebase, dan editor Vim).
+
+Refleksi & Dokumentasi : Memberikan referensi penulisan untuk tabel pemetaan data API (data map), analisis layer boundary, dan pengisian tabel verifikasi/penilaian diri (checklist).
+
 ## Pertemuan 8 — JavaScirpt
 
 ## Deklarasi Penggunaan AI
